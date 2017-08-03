@@ -1,2 +1,7 @@
-.jshintrc
-seeder.html
+.DS_Store
+node_modules/
+npm-debug.log
+*.env
+# custom
+yarn.lock
+.yarnrc
