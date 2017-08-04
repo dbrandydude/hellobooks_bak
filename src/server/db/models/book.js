@@ -1,18 +1,19 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    var User = sequelize.define('User', {
-        username: DataTypes.STRING
+    var Book = sequelize.define('Book', {
+        title: DataTypes.STRING,
+        userId: DataTypes.INTEGER
     }, {
         classMethods: {
             associate: (models) => {
-                User.hasMany(models.Book, {
+                Book.belongsTo(models.User, {
                     foreignKey: 'userId',
-                    as: 'books',
+                    onDelete: 'CASCADE'
                 });
             }
         }
     });
 
-    return User;
+    return Book;
 };
