@@ -6,7 +6,7 @@ const create = (req, res) => {
         .create({
             title: req.body.title
         })
-        .then(books => res.status(201).send(books))
+        .then(book => res.status(201).send(book))
         .catch(err => res.status(400).send(err));
 };
 

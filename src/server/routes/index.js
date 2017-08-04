@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         if (error) return next(error);
         if (results) {
             renderObject.sum = results;
-            res.render('index', renderObject);
+            res.render('index1', renderObject);
         }
     });
 });
