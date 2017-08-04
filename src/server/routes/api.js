@@ -13,4 +13,7 @@ router.post('/books', booksController.create);
 /* GET retrieveAll all books */
 router.get('/books', booksController.retrieveAll);
 
+/* PUT modify book */
+router.put('/books/:bookId', booksController.update);
+
 module.exports = router;
