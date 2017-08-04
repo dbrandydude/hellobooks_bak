@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('Books', {
+        return queryInterface.createTable('Inventories', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
@@ -9,8 +9,24 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             title: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING
+            },
+            bookId: {
+                type: Sequelize.INTEGER
+            },
+            return: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
                 allowNull: false
+            },
+            userId: {
+                type: Sequelize.INTEGER,
+                onDelete: 'CASCADE',
+                references: {
+                    model: 'Users',
+                    key: 'id',
+                    as: 'userId'
+                }
             },
             createdAt: {
                 allowNull: false,
@@ -23,6 +39,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('Books');
+        return queryInterface.dropTable('Inventories');
     }
 };
