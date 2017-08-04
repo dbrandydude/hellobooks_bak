@@ -13,6 +13,9 @@ router.post('/books', booksController.create);
 /* GET retrieveAll all books */
 router.get('/books', booksController.retrieveAll);
 
+/* GET retrieve a book */
+router.get('/books/:bookId', booksController.retrieve);
+
 /* PUT modify book */
 router.put('/books/:bookId', booksController.update);
 

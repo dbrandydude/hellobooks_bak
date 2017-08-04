@@ -41,8 +41,17 @@ const retrieveAll = (req, res) => {
         .catch(err => res.status(400).send(err));
 };
 
+/* Retrieve a book */
+const retrieve = (req, res) => {
+    return Book
+        .findById(req.params.bookId)
+        .then(book => res.status(200).send(book))
+        .catch(err => res.status(400).send(err));
+};
+
 module.exports = {
     create,
     update,
-    retrieveAll
+    retrieveAll,
+    retrieve
 };
