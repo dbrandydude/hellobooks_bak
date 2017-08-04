@@ -10,4 +10,7 @@ const booksController = require('../controllers/books');
 /* POST add book */
 router.post('/books', booksController.create);
 
+/* GET retrieveAll all books */
+router.get('/books', booksController.retrieveAll);
+
 module.exports = router;

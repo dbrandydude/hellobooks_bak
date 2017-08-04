@@ -2,9 +2,7 @@
 
 module.exports = (sequelize, DataTypes) => {
     var Book = sequelize.define('Book', {
-        title: DataTypes.STRING,
-        userId: DataTypes.INTEGER,
-        return: DataTypes.BOOLEAN
+        title: DataTypes.STRING
     }, {
         classMethods: {
             associate: (models) => {

@@ -37,7 +37,7 @@ const update = (req, res) => {
 const retrieveAll = (req, res) => {
     return Book
         .all()
-        .then(books => res.status(200).send(books))
+        .then(book => res.status(200).send(book))
         .catch(err => res.status(400).send(err));
 };
 
